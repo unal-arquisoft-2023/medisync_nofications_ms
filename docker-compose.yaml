@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  notifications_ms:
+    container_name: notification_ms 
+    image: notification_ms_img 
+    build:
+      context: .
+      target: notification_ms
+      dockerfile: ./Dockerfile
+    env_file:
+      - docker.env
+    ports:
+      - 8888:8888
+    networks:
+      - medisync-notification-network
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    container_name: notification_db
+    image: postgres:15.4-alpine
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: notifydb
+    ports:
+      - 5432:5432
+    networks:
+      - medisync-notification-network
+
+
+networks:
+  medisync-notification-network:

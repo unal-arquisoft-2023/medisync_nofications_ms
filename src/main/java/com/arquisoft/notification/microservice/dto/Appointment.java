@@ -6,20 +6,20 @@ public class Appointment {
 	private Integer appointmentId;
 	private Instant date;
 	private Integer patientId;
-	private String speciality;
+	private String specialty;
 	
-	public Appointment(Integer appointmentId, Instant date, Integer patientId, String speciality) {
+	public Appointment(Integer appointmentId, Instant date, Integer patientId, String specialty) {
 		super();
 		this.appointmentId = appointmentId;
 		this.date = date;
 		this.patientId = patientId;
-		this.speciality = speciality;
+		this.specialty = specialty;
 	}
 
 	
 	
-	public String getSpeciality() {
-		return speciality;
+	public String getspecialty() {
+		return specialty;
 	}
 
 
