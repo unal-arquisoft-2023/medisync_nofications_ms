@@ -16,7 +16,6 @@ import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
 
 @Service
-
 public class EmailService {
 
 	private static Logger logger = LoggerFactory.getLogger(EmailService.class);
